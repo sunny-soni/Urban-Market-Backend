@@ -9,7 +9,7 @@ import wishlistRoutes from "./routes/wishlistsRoute.js";
 import paymentRoute from "./routes/payment.js";
 import chatRoute from "./routes/chat.js"
 import recommendationRoute from "./routes/recommendation.js"
-import { pool } from "../db.js";
+import { pool } from "./db.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
