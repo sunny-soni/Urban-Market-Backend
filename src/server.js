@@ -16,7 +16,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://urban-market-steel.vercel.app/",
+    ],
     credentials: true,
   }),
 );
