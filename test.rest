@@ -1,0 +1,43 @@
+# GET http://localhost:5000
+
+// register
+
+# POST http://localhost:5000/auth/register
+# Content-Type: application/json
+
+# {
+#     "username":"pranjal123",
+#     "password":"admin123"
+# }
+
+//login
+# POST http://localhost:5000/auth/login
+# Content-Type: application/json
+
+# {
+#     "username":"pranjal123",
+#     "password":"admin123"
+# }
+
+//Todos list
+GET http://localhost:5000/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1OTkyNzY3LCJleHAiOjE3NjYwNzkxNjd9.cVoAJqcRsEidzpivG3upAyxiV6qB_MkYi2xSKuqWK_k
+
+// Add Todo
+# POST http://localhost:5000/todos
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1OTkyNzY3LCJleHAiOjE3NjYwNzkxNjd9.cVoAJqcRsEidzpivG3upAyxiV6qB_MkYi2xSKuqWK_k
+# Content-Type: application/json
+
+# {
+#     "task": "new task 1"
+# }
+
+// Update task
+
+# PUT http://localhost:5000/todos/2
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1OTkyNzY3LCJleHAiOjE3NjYwNzkxNjd9.cVoAJqcRsEidzpivG3upAyxiV6qB_MkYi2xSKuqWK_k
+# Content-Type: application/json
+
+# {
+#     "completed": "1"
+# }
