@@ -9,6 +9,7 @@ import wishlistRoutes from "./routes/wishlistsRoute.js";
 import paymentRoute from "./routes/payment.js";
 import chatRoute from "./routes/chat.js"
 import recommendationRoute from "./routes/recommendation.js"
+import { pool } from "../db.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +27,22 @@ app.use(
 
 app.get("/", (req, res) => {
   res.send("Backend running 🚀");
+});
+
+app.get("/health", async (req, res) => {
+  try {
+    await pool.query("SELECT 1");
+    res.status(200).json({
+      status: "OK",
+      db: "connected",
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "ERROR",
+      db: "disconnected",
+      error: err.message,
+    });
+  }
 });
 
 app.use("/auth", authRoutes);
