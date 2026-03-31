@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://urban-market-steel.vercel.app/",
+      "https://urban-market-steel.vercel.app",
     ],
     credentials: true,
   }),
